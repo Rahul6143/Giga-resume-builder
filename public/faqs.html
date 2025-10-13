@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Giga Resume Builder | BetterCV</title>
+  <title>Giga Resume Builder</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     /* Infinite Marquee Animation */
@@ -35,11 +35,113 @@
     .overflow-hidden:hover .marquee {
       animation-play-state: paused;
     }
-  </style>
+  
+    .marquee {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 30px;
+    animation: scroll 35s linear infinite;
+  }
+
+  .highlight-card {
+    min-width: 280px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(99, 102, 241, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .highlight-card:hover {
+    transform: translateY(-5px);
+    border-color: #6366f1;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+  }
+
+  .highlight-card .icon-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin: 0 auto 15px;
+  }
+
+  .highlight-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .highlight-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Pause on hover */
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+</style>
+
 </head>
 <body class="bg-white text-gray-800">
+<header>
+  <!-- Navbar -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+    <!-- Logo -->
+    <a href="/" class="flex items-center space-x-2">
+      <img src="https://via.placeholder.com/40" alt="Logo" class="w-10 h-10 rounded-full" />
+      <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        Giga Resume
+      </span>
+    </a>
 
-  <!-- Hero Section -->
+    <!-- Desktop Links -->
+    <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+      <li><a href="#features" class="hover:text-blue-600 transition">Features</a></li>
+      <li><a href="#templates" class="hover:text-blue-600 transition">Templates</a></li>
+      <li><a href="#pricing" class="hover:text-blue-600 transition">Pricing</a></li>
+      <li><a href="#faq" class="hover:text-blue-600 transition">FAQ</a></li>
+    </ul>
+
+    <!-- Right Side Buttons -->
+    <div class="hidden md:flex items-center space-x-4">
+      <a href="/login" class="text-gray-700 font-medium hover:text-blue-600 transition">
+        Login
+      </a>
+      <a
+        href="/builder"
+        class="bg-blue-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-700 transition"
+      >
+        Get Started
+      </a>
+    </div>
+</header>  
+<!-- Hero Section -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-50 to-white"></div>
     <div class="container mx-auto px-4 py-20 relative">
@@ -49,17 +151,20 @@
             <span>🚀 Build Your Future Today</span>
           </div>
           <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
-            Create Your
-            <span class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-              Job-Winning Resume
-            </span>
+            Create Resume That<span class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Gets You Noticed</span>
           </h1>
+          <h3 class="text-1xl lg:text-2xl leading-tight">Build Job-Ready Resumes in Just a Few Clicks</h3>
           <p class="text-lg text-gray-600">
-            Stand out from the crowd with an AI-powered resume and cover letter builder designed to help you get noticed, get interviews, and get hired — faster.
+            Whether you're a fresher looking for your first IT job or a professional aiming for a career switch, Gigaversity’s Resume Builder helps you build a resume that reflects your skills, projects, and growth in a <span style="font-weight: bold;">recruiter-approved, ATS-friendly format.</span>
+          </p>
+          <p>
+            Choose from a variety of resume templates that adapt to your career stage, helping you present your achievements, skills, and projects clearly and professionally - so recruiters notice what truly matters.
+
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="/builder" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition">
-              Get Started Free →
+              Create Resume Now →
             </a>
             <a href="#" class="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg text-lg font-medium hover:bg-gray-100 transition">
               View Templates
@@ -72,8 +177,7 @@
             </div>
             <div class="flex items-center gap-2">
               <span>✔</span>
-              <span>Free forever</span>
-            </div>
+              <span>100% free to use</span>
           </div>
         </div>
 
@@ -89,32 +193,42 @@
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl lg:text-4xl font-bold mb-4">
-        Why Use Giga Resume Builder (BetterCV)?
+        Exclusive Features of Gigaversity Resume Builder?
       </h2>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
+      <!-- <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
         Create a <strong>job-winning resume</strong> and <strong>boost your job search</strong> with our AI-powered builder, designed to highlight your achievements and get you hired faster.
-      </p>
+      </p> -->
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-          <div class="text-blue-600 text-4xl mb-4">📝</div>
-          <h3 class="text-xl font-semibold mb-3">Pre-Written Content</h3>
-          <p class="text-gray-600">Skip the writing struggle - save time with AI-curated examples and effortless customization.</p>
+      <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
+        <div class="grid lg:grid-cols-2 bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold mb-3">🤖 Gen AI Skill Suggestions-With Real-World Use Cases</h3>
+          <p class="text-gray-600">Stand out with in-demand Gen AI skills. Our AI engine recommends personalized Gen AI     tools (like ChatGPT, Midjourney, Figma AI, Claude, Bard, DALL·E, etc.) based on your profile.
+          You can even add how you’ve used these tools — for example:</p>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-          <div class="text-purple-600 text-4xl mb-4">🤖</div>
-          <h3 class="text-xl font-semibold mb-3">AI-Powered Suggestions</h3>
-          <p class="text-gray-600">Let AI suggest impactful phrases and the right tone to showcase your strengths.</p>
+
+        <div class="grid lg:grid-cols-2 bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+          <p class="text-gray-600">Gigaversity’s resume builder recommends portfolio-ready projects based on your target role—be it full stack development, data science, UI/UX, or product management. With one click, access our GitHub repository filled with real-time projects, step-by-step guides, and code. Build directly from your resume and showcase hands-on experience to employers.</p>
+          <h3 class="text-xl font-semibold mb-3">📊 Build Projects directly From our Resume Builder</h3>
+          
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-          <div class="text-blue-600 text-4xl mb-4">📊</div>
-          <h3 class="text-xl font-semibold mb-3">ATS-Compatible</h3>
-          <p class="text-gray-600">Every Giga Resume passes screening software and gets noticed by recruiters.</p>
+        <div class="grid lg:grid-cols-2 bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold mb-3">📝 Smart Resume Content That Writes Itself</h3>
+          <p class="text-gray-600">Gigaversity’s AI Resume Maker helps you write your resume with ease. It suggests role-based summaries, internship descriptions, strong bullet points, and the right keywords. Designed for freshers, the templates are professional and ATS-friendly, making sure your resume stands out and ranks higher with top recruiters.</p>
+          
+          
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-          <div class="text-purple-600 text-4xl mb-4">💼</div>
-          <h3 class="text-xl font-semibold mb-3">Boost Your Job Search</h3>
-          <p class="text-gray-600">Frame your skills the right way and increase your chances of landing interviews.</p>
+        <div class="grid lg:grid-cols-2 bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+          
+          <div>
+            <p class="text-gray-600" style="text-align: left; font-weight: bold;">Every template is: </p>
+              <ul style="list-style-type:circle; text-align: left;">
+                <li>Designed by experts with recruiter input</li>
+                <li>Clean and modern with a correct resume format for freshers and professionals</li>
+                <li>Tested for compatibility with leading ATS tools</li>
+              </ul> 
+            <p>So your resume doesn’t get rejected by a bot before a human even sees it.</p>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">💼 ATS-Friendly Templates & Formats</h3>
         </div>
       </div>
 
@@ -126,29 +240,106 @@
       </div>
     </div>
   </section>
+<!-- key highlights -->
 
-  <!-- 4 Steps Section -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #f5f8ff, #f8f9fb); position: relative; overflow: hidden;">
+  <div style="text-align: center; margin-bottom: 50px;">
+    <div style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 50px; background: rgba(99, 102, 241, 0.1); color: #6366f1; font-weight: 500; font-size: 14px; margin-bottom: 15px;">
+      ✨ <span>Why Choose Us</span>
+    </div>
+    <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 10px;">Key Highlights of Giga Resume Builder</h2>
+    <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">Powerful features designed to help you create the perfect resume</p>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <!-- CARD TEMPLATE -->
+      <div class="highlight-card">
+        <div class="icon-box" style="background: linear-gradient(135deg, #6366f1, #818cf8);">⭐</div>
+        <h3>Top Rated</h3>
+        <p>Trusted by thousands of job seekers</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="icon-box" style="background: linear-gradient(135deg, #ec4899, #f472b6);">⚡</div>
+        <h3>Lightning Fast</h3>
+        <p>Build your resume in minutes</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="icon-box" style="background: linear-gradient(135deg, #6366f1, #818cf8);">🧠</div>
+        <h3>Gen AI Recommendation</h3>
+        <p>Smart suggestions powered by AI</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="icon-box" style="background: linear-gradient(135deg, #ec4899, #f472b6);">💡</div>
+        <h3>Project Suggestion</h3>
+        <p>Get relevant project ideas</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="icon-box" style="background: linear-gradient(135deg, #6366f1, #818cf8);">📄</div>
+        <h3>Professional Layouts</h3>
+        <p>Beautiful, modern templates</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="icon-box" style="background: linear-gradient(135deg, #ec4899, #f472b6);">🏆</div>
+        <h3>Recruiter Approved</h3>
+        <p>Professionally vetted templates</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="icon-box" style="background: linear-gradient(135deg, #6366f1, #818cf8);">🛡️</div>
+        <h3>ATS-Friendly</h3>
+        <p>Pass all applicant tracking systems</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="icon-box" style="background: linear-gradient(135deg, #ec4899, #f472b6);">🎯</div>
+        <h3>Skills Suggestion</h3>
+        <p>AI-powered skill recommendations</p>
+      </div>
+
+      <!-- Duplicate for Infinite Loop -->
+      <div class="highlight-card">
+        <div class="icon-box" style="background: linear-gradient(135deg, #6366f1, #818cf8);">⭐</div>
+        <h3>Top Rated</h3>
+        <p>Trusted by thousands of job seekers</p>
+      </div>
+      <div class="highlight-card">
+        <div class="icon-box" style="background: linear-gradient(135deg, #ec4899, #f472b6);">⚡</div>
+        <h3>Lightning Fast</h3>
+        <p>Build your resume in minutes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Who is it for? -->
   <section class="py-20 bg-white text-center">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12">Get Your Standout Resume in 4 Easy Steps!</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white p-8 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-bold mb-3">1. Choose a Template</h3>
-          <p class="text-gray-600">Start strong with professional ATS-friendly resume templates. You can always change it later with one-click!</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-bold mb-3">2. Fill Resume Details</h3>
-          <p class="text-gray-600">Upload existing or build new with pre-written expert content. Build your power resume and outshine!</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-bold mb-3">3. Customize & Personalize</h3>
-          <p class="text-gray-600">Pre-written content, tailored for your job profile! Easily personalize your resume with fonts and color themes.</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-bold mb-3">4. Download & Shine!</h3>
-          <p class="text-gray-600">Download your resume for free with our plan! Upgrade to premium for that extra edge!</p>
-        </div>
-      </div>
+      <h2 class="text-4xl font-bold mb-12">Who is it for?</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <div class="bg-white p-8 rounded-2xl shadow-lg">
+    <span class="text-5xl mb-3 block">🎓</span>
+    <p class="text-gray-600">Students and freshers entering the job market.</p>
+  </div>
+  <div class="bg-white p-8 rounded-2xl shadow-lg">
+    <span class="text-5xl mb-3 block">💼</span>
+    <p class="text-gray-600">Working professionals upgrading roles or switching careers.</p>
+  </div>
+  <div class="bg-white p-8 rounded-2xl shadow-lg">
+    <span class="text-5xl mb-3 block">⏳ </span>
+    <p class="text-gray-600">Individuals with career gaps needing impactful resumes.</p>
+  </div>
+  <div class="bg-white p-8 rounded-2xl shadow-lg">
+    <span class="text-5xl mb-3 block">🤖</span>
+    <p class="text-gray-600"> Tech enthusiasts wanting to showcase Gen AI & project skills.</p>
+  </div>
+</div>
+
       <div class="mt-12">
         <a href="/builder" class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition">
           Build Your Resume For Free
@@ -183,7 +374,7 @@
   </section>
 
     <!-- Infinite Marquee Reviews -->
-  <section class="py-20">
+  <!-- <section class="py-20">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl lg:text-4xl font-bold mb-6">What Our Users Say</h2>
       <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -191,9 +382,9 @@
       </p>
 
       <div class="overflow-hidden relative">
-        <div class="marquee">
+        <div class="marquee"> -->
           <!-- Repeat testimonials (duplicated for infinite effect) -->
-          <div class="testimonial bg-white shadow-lg rounded-2xl p-6">
+          <!-- <div class="testimonial bg-white shadow-lg rounded-2xl p-6">
             <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
             <p class="text-gray-700 italic">“Giga Resume helped me land interviews within a week — it truly builds job-winning resumes!”</p>
             <p class="mt-3 font-semibold text-gray-800">— Priya S., Marketing Specialist</p>
@@ -221,10 +412,10 @@
             <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
             <p class="text-gray-700 italic">“I’ve used other tools, but Giga is hands-down the most intuitive and effective.”</p>
             <p class="mt-3 font-semibold text-gray-800">— Meera L., Product Manager</p>
-          </div>
+          </div> -->
 
           <!-- Repeat again for seamless loop -->
-          <div class="testimonial bg-white shadow-lg rounded-2xl p-6">
+          <!-- <div class="testimonial bg-white shadow-lg rounded-2xl p-6">
             <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
             <p class="text-gray-700 italic">“Giga Resume helped me land interviews within a week — it truly builds job-winning resumes!”</p>
             <p class="mt-3 font-semibold text-gray-800">— Priya S., Marketing Specialist</p>
@@ -238,10 +429,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
     <!-- Linear Marquee Reviews -->
-  <section class="py-20">
+  <!-- <section class="py-20">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl lg:text-4xl font-bold mb-6">What Our Users Say</h2>
       <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -249,9 +440,9 @@
       </p>
 
       <div class="overflow-hidden relative">
-        <div class="linear">
+        <div class="linear"> -->
           <!-- Repeat testimonials (duplicated for infinite effect) -->
-          <div class="testimonial1 mx-auto p-6 text-center">
+          <!-- <div class="testimonial1 mx-auto p-6 text-center">
             <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
             <p class="text-gray-700 italic">“Giga Resume helped me land interviews within a week — it truly builds job-winning resumes!”</p>
             <p class="mt-3 font-semibold text-gray-800">— Priya S., Marketing Specialist</p>
@@ -284,10 +475,10 @@
             <p class="text-gray-700 italic">“I’ve used other tools, but Giga is hands-down the most intuitive and effective.”</p>
             <p class="mt-3 font-semibold text-gray-800">— Meera L., Product Manager</p>
             <br>
-          </div>
+          </div> -->
 
           <!-- Repeat again for seamless loop -->
-          <div class="testimonial1 mx-auto px-4 text-center">
+          <!-- <div class="testimonial1 mx-auto px-4 text-center">
             <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
             <p class="text-gray-700 italic">“Giga Resume helped me land interviews within a week — it truly builds job-winning resumes!”</p>
             <p class="mt-3 font-semibold text-gray-800">— Priya S., Marketing Specialist</p>
@@ -303,7 +494,102 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
+<section class="py-20 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+        Why Giga Resume Builder Stands Out
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        See how we compare to other resume builders
+      </p>
+    </div>
+
+    <!-- Table -->
+    <div class="max-w-5xl mx-auto overflow-x-auto">
+      <div class="bg-white rounded-2xl shadow-xl border overflow-hidden">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gradient-to-r from-blue-600 to-purple-500 text-white">
+              <th class="py-4 px-6 text-left font-semibold text-lg">Feature</th>
+              <th class="py-4 px-6 text-center font-semibold text-lg">Giga Resume Builder</th>
+              <th class="py-4 px-6 text-center font-semibold text-lg">Other Resume Builders</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-medium">Gen AI Skill Recommendations</td>
+              <td class="py-4 px-6 text-center text-green-600 font-semibold">✔ Yes</td>
+              <td class="py-4 px-6 text-center text-red-600 font-semibold">✖ No</td>
+            </tr>
+
+            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-medium">Real-Time Project Suggestions</td>
+              <td class="py-4 px-6 text-center text-green-600 font-semibold">✔ Yes</td>
+              <td class="py-4 px-6 text-center text-red-600 font-semibold">✖ No</td>
+            </tr>
+
+            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-medium">ATS Compatibility Tested</td>
+              <td class="py-4 px-6 text-center text-green-600 font-semibold">✔ Yes</td>
+              <td class="py-4 px-6 text-center text-yellow-600 font-semibold">⚠️ Limited</td>
+            </tr>
+
+            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-medium">Free to Use</td>
+              <td class="py-4 px-6 text-center text-green-600 font-semibold">✔ 100% Free</td>
+              <td class="py-4 px-6 text-center text-yellow-600 font-semibold">⚠️ Limited Access</td>
+            </tr>
+
+            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-medium">One-Click GitHub Projects</td>
+              <td class="py-4 px-6 text-center text-green-600 font-semibold">✔ Yes</td>
+              <td class="py-4 px-6 text-center text-red-600 font-semibold">✖ No</td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-medium">Built for Freshers & Tech Roles</td>
+              <td class="py-4 px-6 text-center text-green-600 font-semibold">✔ Specifically Designed</td>
+              <td class="py-4 px-6 text-center text-yellow-600 font-semibold">⚠️ Generic</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-center">About Us</h2>
+
+      <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Gigaversity is India's first product-based learning platform, headquartered in Hyderabad, offering both on-campus and online programs in rapidly growing domains such as AI &amp; ML, Full Stack Development, and Data Science. Our unique approach empowers students to build industry-grade, scalable projects incubated directly by leading tech companies. This hands-on experience ensures learners gain real-world skills and understand how cutting-edge products are developed from the ground up.
+        </p>
+
+        <div class="border-l-4 border-blue-600 pl-6 bg-blue-50 p-6 rounded-r-lg">
+          <h3 class="text-xl font-semibold mb-4 text-blue-600">
+            Why We Created the Gigaversity Resume Builder
+          </h3>
+
+          <p class="text-gray-700 leading-relaxed">
+            Your resume is your digital identity — the key to entering the professional world. Yet, many aspirants struggle with how to build a strong resume, present their skills effectively, and structure their information clearly. This confusion often leaves them blank or overwhelmed.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed mt-4">
+            To solve this, we created India's first AI-powered resume builder that breaks down these barriers. Simply by selecting your target role, our intelligent assistant guides you step-by-step to craft a professional, recruiter-approved resume that truly showcases your skills and projects — removing all the guesswork and helping you get noticed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- FAQ Section -->
   <section class="py-20">
@@ -318,56 +604,48 @@
       </div>
 
       <div class="max-w-3xl mx-auto space-y-4">
-        <!-- Original FAQs -->
         <details class="border border-gray-200 rounded-lg p-4">
-          <summary class="font-semibold cursor-pointer">Is the resume builder really free?</summary>
-          <p class="mt-2 text-gray-600">Yes! You can create, edit, and download your resume for free - no credit card required.</p>
+          <summary class="font-semibold cursor-pointer">What are the best resume templates for freshers available on Gigaversity Resume Builder?</summary>
+          <p class="mt-2 text-gray-600">Gigaversity offers a variety of professional, recruiter-approved resume templates designed specifically for freshers. These templates follow the perfect resume format for freshers, ensuring a clean, modern look that highlights your skills, projects, and education while being fully ATS-friendly.</p>
         </details>
 
         <details class="border border-gray-200 rounded-lg p-4">
-          <summary class="font-semibold cursor-pointer">Are the templates ATS-friendly?</summary>
-          <p class="mt-2 text-gray-600">Absolutely! All templates are designed to work perfectly with Applicant Tracking Systems (ATS).</p>
+          <summary class="font-semibold cursor-pointer">How does Gigaversity’s free resume builder help create ATS-friendly resumes?</summary>
+          <p class="mt-2 text-gray-600">Our free resume builder uses expert-designed templates tested for compatibility with leading Applicant Tracking Systems (ATS). This ensures your resume passes through automated screening bots and reaches recruiters, increasing your chances of getting noticed and shortlisted.</p>
         </details>
 
         <details class="border border-gray-200 rounded-lg p-4">
-          <summary class="font-semibold cursor-pointer">Can I download my resume as a PDF?</summary>
-          <p class="mt-2 text-gray-600">Yes, you can download your resume as a professional PDF file ready to send to employers.</p>
+          <summary class="font-semibold cursor-pointer">Can I use Gigaversity Resume Builder to switch careers or update my professional resume?</summary>
+          <p class="mt-2 text-gray-600">Yes! Gigaversity Resume Builder is perfect for professionals aiming to upgrade roles or make a career switch. It offers smart content suggestions, project recommendations, and flexible templates tailored to showcase your evolving skills and experience.</p>
         </details>
 
         <details class="border border-gray-200 rounded-lg p-4">
-          <summary class="font-semibold cursor-pointer">Do I need to create an account?</summary>
-          <p class="mt-2 text-gray-600">You can start building without an account, but saving resumes for later requires signing up.</p>
+          <summary class="font-semibold cursor-pointer">How can I build portfolio-ready projects directly from my resume on Gigaversity?</summary>
+          <p class="mt-2 text-gray-600">Gigaversity Resume Builder recommends projects based on your target role—whether it's full stack development, data science, UI/UX, or product management. With one click, you can access our GitHub repository featuring real-time projects, step-by-step guides, and code, allowing you to build and showcase hands-on experience straight from your resume.
+</p>
         </details>
 
         <details class="border border-gray-200 rounded-lg p-4">
-          <summary class="font-semibold cursor-pointer">How long does it take to build a resume?</summary>
-          <p class="mt-2 text-gray-600">Most users finish within 10–15 minutes thanks to our pre-filled content suggestions.</p>
-        </details>
-
-        <!-- Added FAQs -->
-        <details class="border border-gray-200 rounded-lg p-4">
-          <summary class="font-semibold cursor-pointer">Can I edit my resume after downloading?</summary>
-          <p class="mt-2 text-gray-600">You can re-upload or edit your saved version anytime from your dashboard.</p>
+          <summary class="font-semibold cursor-pointer">How does Gigaversity help me showcase my Gen AI skills on my resume?
+</summary>
+          <p class="mt-2 text-gray-600">Our AI engine suggests relevant Gen AI tools like ChatGPT, Midjourney, Figma AI, Claude, Bard, and DALL·E tailored to your profile. You can add detailed descriptions of how you’ve used these tools in real-world projects, helping recruiters see your proficiency with cutting-edge AI technologies.</p>
         </details>
 
         <details class="border border-gray-200 rounded-lg p-4">
-          <summary class="font-semibold cursor-pointer">Is my data safe and private?</summary>
-          <p class="mt-2 text-gray-600">Yes, your data is fully encrypted and never shared with third parties.</p>
+          <summary class="font-semibold cursor-pointer">Can Gigaversity recommend AI-powered projects that match my skills and career goals?
+</summary>
+          <p class="mt-2 text-gray-600">Yes! Based on your profile and target job role, Gigaversity’s resume builder smartly recommends AI-powered and other industry-relevant projects that you can build step-by-step. This feature helps you gain practical experience and strengthens your resume with projects aligned to your career ambitions.</p>
         </details>
 
         <details class="border border-gray-200 rounded-lg p-4">
-          <summary class="font-semibold cursor-pointer">Can I build multiple resumes?</summary>
-          <p class="mt-2 text-gray-600">Yes! You can create and manage multiple resumes for different job roles or industries.</p>
+          <summary class="font-semibold cursor-pointer"> Is the Gigaversity Resume Builder suitable for professionals with career gaps?
+</summary>
+          <p class="mt-2 text-gray-600">Absolutely. Our resume builder helps you craft impactful resumes that highlight your skills, projects, and growth, making it ideal for individuals with career gaps who want to re-enter the job market confidently.</p>
         </details>
 
         <details class="border border-gray-200 rounded-lg p-4">
-          <summary class="font-semibold cursor-pointer">Do you offer AI suggestions or auto content?</summary>
-          <p class="mt-2 text-gray-600">Yes, our builder provides AI-generated phrases and section suggestions to enhance your resume.</p>
-        </details>
-
-        <details class="border border-gray-200 rounded-lg p-4">
-          <summary class="font-semibold cursor-pointer">What formats can I export in?</summary>
-          <p class="mt-2 text-gray-600">You can export in PDF, DOCX, or share a unique online link to your resume.</p>
+          <summary class="font-semibold cursor-pointer">Are Gigaversity’s resume templates recruiter-approved and optimized for top ATS tools?</summary>
+          <p class="mt-2 text-gray-600">Yes, every template is designed with input from recruiters and thoroughly tested to ensure compatibility with leading ATS software. This increases your chances of passing automated screenings and getting your resume seen by hiring managers.</p>
         </details>
       </div>
     </div>
@@ -377,9 +655,9 @@
   <section class="py-20">
     <div class="container mx-auto px-4">
       <div class="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-600 rounded-3xl p-12 text-center text-white shadow-2xl">
-        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Ready to Build Your Future?</h2>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Giga Resume - The smarter way to build resume in 2025</h2>
         <p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-          Join thousands of job seekers who’ve landed their dream jobs with Giga Resume Builder.
+          <span style="font-weight: bold;">Gigaversity Resume Builder</span> isn’t just another <span style="font-weight: bold;">free resume maker</span> — it’s your launchpad to success. With <span style="font-weight: bold;">Gen AI suggestions, project-building guidance</span>, and <span style="font-weight: bold;">ATS-optimized templates</span>, you’re not just creating a resume — you’re building your future.
         </p>
         <a href="/builder" class="bg-white text-blue-700 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition">
           Start Building Now →
