@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import Navbar from "./components/navbar";
 import HeroSection from "./components/hero";
 import ExclusiveFeatures from "./components/features";
-import KeyHighlights from "./components/whychoose";
+import KeyHighlights from "./components/keyhighlights";
 import WhoIsItFor from "./components/whoisit";
 import ReviewsSection from "./components/review";
 import ComparisonSection from "./components/compare";
