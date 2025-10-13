@@ -1,4 +1,5 @@
-import { dividerClasses } from "@mui/material";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/navbar";
 import HeroSection from "./components/hero";
 import ExclusiveFeatures from "./components/features";
@@ -9,21 +10,46 @@ import ComparisonSection from "./components/compare";
 import AboutUsSection from "./components/aboutus";
 import FAQSection from "./components/faqs";
 import CTASection from "./components/ctasection";
+import Login from "./components/login"; // ✅ import your login component
+
+// This groups your main homepage content together
+const HomePage = () => (
+  <>
+    <HeroSection />
+    <ExclusiveFeatures />
+    <KeyHighlights />
+    <WhoIsItFor />
+    <ReviewsSection />
+    <ComparisonSection />
+    <AboutUsSection />
+    <FAQSection />
+    <CTASection />
+  </>
+);
+
+// Optional — hides Navbar on specific routes like "/login"
+const Layout = ({ children }) => {
+  const location = useLocation();
+  const hideNavbar = location.pathname === "/login"; // 👈 hide Navbar on /login
+
+  return (
+    <>
+      {!hideNavbar && <Navbar />}
+      {children}
+    </>
+  );
+};
+
 function App() {
   return (
-    <div>
-      <Navbar/>
-      <HeroSection/>
-      <ExclusiveFeatures/>
-      <KeyHighlights/>
-      <WhoIsItFor/>
-      <ReviewsSection/>
-      <ComparisonSection/>
-      <AboutUsSection/>
-      <FAQSection/>
-      <CTASection/>
-    </div>
-    
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 

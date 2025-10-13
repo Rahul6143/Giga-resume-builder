@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center !important",
   },
   title: {
-    fontWeight: 700,
-    marginBottom: 16,
+    fontWeight: '700 !important',
+    marginBottom: '16px !important',
     fontSize: "2rem",
   },
   subtitle: {

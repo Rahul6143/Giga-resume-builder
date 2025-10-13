@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 auto",
   },
   title: {
-    fontWeight: "700",
-    marginBottom: 48,
+    fontWeight: "700 !important",
+    marginBottom: '48px !important',
     fontSize: "2.5rem",
   },
   cardsWrapper: {
