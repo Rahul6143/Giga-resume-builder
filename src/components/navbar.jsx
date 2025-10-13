@@ -1,5 +1,11 @@
 import React from "react";
-import { AppBar, Toolbar, Box, Typography, Button } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Box,
+  Typography,
+  Button,
+} from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
@@ -16,24 +22,16 @@ const useStyles = makeStyles({
     display: "flex !important",
     justifyContent: "space-between !important",
     alignItems: "center !important",
-    // padding: "16px 24px !important",
     maxWidth: "1200px !important",
-    // margin: "0 auto",
   },
   logoContainer: {
     display: "flex !important",
     alignItems: "center !important",
     textDecoration: "none !important",
   },
-  logoImg: {
-    width: "40px",
-    height: "40px",
-    borderRadius: "50%",
-    marginRight: "80px",
-  },
   logoText: {
     fontSize: "1.4rem !important",
-    fontWeight: '700!important',
+    fontWeight: "700!important",
     paddingLeft: "32px !important",
     background: "linear-gradient(90deg, #2563EB, #7C3AED) !important",
     WebkitBackgroundClip: "text!important",
@@ -51,9 +49,9 @@ const useStyles = makeStyles({
   navItem: {
     color: "#374151 !important",
     fontFamily: "'Roboto', sans-serif !important",
-    fontWeight: '500!important',
+    fontWeight: "500!important",
     textDecoration: "none !important",
-    marginRight: "16px !important", 
+    marginRight: "16px !important",
     transition: "color 0.3s ease !important",
     "&:hover": {
       color: "#2563EB !important",
@@ -61,19 +59,16 @@ const useStyles = makeStyles({
   },
   rightButtons: {
     display: "flex !important",
-    fontFamily: "'Roboto', sans-serif !important",
     alignItems: "center !important",
-    marginLeft: "16px !important",
     gap: "16px !important",
     "@media (max-width: 960px)": {
       display: "none",
     },
   },
-  loginLink: {
+  loginBtn: {
     color: "#374151 !important",
-    fontWeight: '500!important',
-    textDecoration: "none!important",
-    transition: "color 0.3s ease !important",
+    fontWeight: "500!important",
+    textTransform: "none!important",
     "&:hover": {
       color: "#2563EB !important",
     },
@@ -83,7 +78,7 @@ const useStyles = makeStyles({
     color: "#FFFFFF !important",
     padding: "8px 20px !important",
     borderRadius: "8px !important",
-    fontWeight: '600!important',
+    fontWeight: "600!important",
     textTransform: "none!important",
     "&:hover": {
       backgroundColor: "#1E40AF !important",
@@ -94,16 +89,16 @@ const useStyles = makeStyles({
 const Navbar = () => {
   const classes = useStyles();
 
+  // 👇 If you use React Router, use navigate("/login") instead of window.location
+  const handleLoginClick = () => {
+    window.location.href = "/login";
+  };
+
   return (
     <AppBar className={classes.appBar} elevation={0}>
       <Toolbar className={classes.toolbar}>
         {/* Logo */}
         <a href="/" className={classes.logoContainer}>
-          {/* <img
-            src="https://via.placeholder.com/40"
-            alt="Logo"
-            className={classes.logoImg}
-          /> */}
           <Typography className={classes.logoText}>Giga Resume</Typography>
         </a>
 
@@ -133,9 +128,13 @@ const Navbar = () => {
 
         {/* Right Buttons */}
         <Box className={classes.rightButtons}>
-          <a href="/login" className={classes.loginLink}>
+          <Button
+            className={classes.loginBtn}
+            onClick={handleLoginClick}
+            disableElevation
+          >
             Login
-          </a>
+          </Button>
           <Button
             href="/builder"
             className={classes.getStartedBtn}
