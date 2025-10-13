@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles(() => ({
   section: {
-    padding: "5rem 0 !important",
+    padding: "40px 16px !important",
     backgroundColor: "#F9FAFB !important",
   },
   container: {

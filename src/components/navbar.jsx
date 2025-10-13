@@ -136,7 +136,7 @@ const Navbar = () => {
             Login
           </Button>
           <Button
-            href="/builder"
+            href="/"
             className={classes.getStartedBtn}
             disableElevation
           >

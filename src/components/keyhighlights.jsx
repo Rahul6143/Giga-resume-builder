@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(() => ({
   section: {
-    padding: "80px 0 !important",
+    padding: "40px 16px !important",
     background: "linear-gradient(135deg, #f5f8ff, #f8f9fb)!important",
     position: "relative !important",
     overflow: "hidden !important",
