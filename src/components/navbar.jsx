@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Box,
-  Typography,
-  Button,
-} from "@mui/material";
+import { AppBar, Toolbar, Box, Typography, Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles({
   appBar: {
@@ -23,11 +18,14 @@ const useStyles = makeStyles({
     justifyContent: "space-between !important",
     alignItems: "center !important",
     maxWidth: "1200px !important",
+    margin: "0 auto",
+    width: "100%",
   },
   logoContainer: {
     display: "flex !important",
     alignItems: "center !important",
     textDecoration: "none !important",
+    cursor: "pointer",
   },
   logoText: {
     fontSize: "1.4rem !important",
@@ -88,21 +86,27 @@ const useStyles = makeStyles({
 
 const Navbar = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
 
-  // 👇 If you use React Router, use navigate("/login") instead of window.location
   const handleLoginClick = () => {
-    window.location.href = "/login";
+    navigate("/login");
+  };
+
+  const handleGetStartedClick = () => {
+    // Smooth scroll to TemplateGallery section
+    const gallerySection = document.getElementById("template-gallery");
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <AppBar className={classes.appBar} elevation={0}>
       <Toolbar className={classes.toolbar}>
-        {/* Logo */}
-        <a href="/" className={classes.logoContainer}>
+        <Box className={classes.logoContainer} onClick={() => navigate("/")}>
           <Typography className={classes.logoText}>Giga Resume</Typography>
-        </a>
+        </Box>
 
-        {/* Desktop Links */}
         <ul className={classes.navLinks}>
           <li>
             <a href="#features" className={classes.navItem}>
@@ -126,7 +130,6 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Right Buttons */}
         <Box className={classes.rightButtons}>
           <Button
             className={classes.loginBtn}
@@ -136,8 +139,8 @@ const Navbar = () => {
             Login
           </Button>
           <Button
-            href="/"
             className={classes.getStartedBtn}
+            onClick={handleGetStartedClick}
             disableElevation
           >
             Get Started
