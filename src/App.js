@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Navbar from "./components/navbar";
 import HeroSection from "./components/hero";
 import ExclusiveFeatures from "./components/features";
@@ -10,9 +15,13 @@ import ComparisonSection from "./components/compare";
 import AboutUsSection from "./components/aboutus";
 import FAQSection from "./components/faqs";
 import CTASection from "./components/ctasection";
-import Login from "./components/login"; // ✅ import your login component
+import Login from "./components/login";
+import {TemplateGallery} from "./components/templateGallery";
 
-// This groups your main homepage content together
+
+// =========================
+// Home Page
+// =========================
 const HomePage = () => (
   <>
     <HeroSection />
@@ -24,10 +33,13 @@ const HomePage = () => (
     <AboutUsSection />
     <FAQSection />
     <CTASection />
+    <TemplateGallery/>
   </>
 );
 
-// Optional — hides Navbar on specific routes like "/login"
+// =========================
+// Layout Wrapper (controls Navbar visibility)
+// =========================
 const Layout = ({ children }) => {
   const location = useLocation();
   const hideNavbar = location.pathname === "/login"; // 👈 hide Navbar on /login
@@ -40,6 +52,9 @@ const Layout = ({ children }) => {
   );
 };
 
+// =========================
+// Main App Component
+// =========================
 function App() {
   return (
     <Router>
@@ -47,6 +62,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/templates" element={<TemplateGallery />} />
+
         </Routes>
       </Layout>
     </Router>
