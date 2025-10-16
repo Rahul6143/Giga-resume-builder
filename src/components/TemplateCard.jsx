@@ -7,8 +7,8 @@ import { ArrowRight } from "lucide-react";
 const useStyles = makeStyles({
   card: {
     position: "relative !important",
-    height: "850px !important",
-    width: "500px !important",
+    height: "600px !important",
+    width: "300px !important",
     borderRadius: "12px !important",
     backgroundColor: "#ffffffff !important",
     boxShadow: "0 4px 12px rgba(0,0,0,0.06) !important",
@@ -24,15 +24,16 @@ const useStyles = makeStyles({
   imageWrapper: {
     position: "relative !important",
     width: "100% !important",
+    
     paddingTop: "133.33% !important", // 3/4 aspect ratio
-    overflow: "hidden !important",
     "& img": {
       position: "absolute !important",
+      backgroundColor: "#88a7e6ff !important",
       top: '0 !important',
       left: '0 !important',
-      width: "90% !important",
-      height: "90% !important",
-      objectFit: "cover !important",
+      width: "100% !important",
+      height: "100% !important",
+      objectFit: "none !important",
       transition: "transform 0.5s !important",
     },
     "&:hover img": {
@@ -41,6 +42,7 @@ const useStyles = makeStyles({
   },
   popularBadge: {
     position: "absolute !important",
+    fontFamily: "'Roboto', sans-serif !important",
     top: "12px !important",
     right: "12px !important",
     background: "linear-gradient(135deg, #2563eb, #7c3aed) !important",
@@ -59,6 +61,7 @@ const useStyles = makeStyles({
     flex: '1 !important',
   },
   categoryBadge: {
+    fontFamily: "'Roboto', sans-serif !important",
     fontSize: "0.75rem !important",
     fontWeight: '500 !important',
     backgroundColor: "#e5e7eb !important", // gray-200

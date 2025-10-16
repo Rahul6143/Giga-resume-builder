@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   heroSection: {
@@ -151,9 +152,13 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+
 const HeroSection = () => {
   const classes = useStyles();
-
+  const navigate = useNavigate();
+  const handleGetStartedClick = () => {
+    navigate("/templates");
+  };
   return (
     <section className={classes.heroSection}>
       <div className={classes.background} />
@@ -190,10 +195,12 @@ const HeroSection = () => {
           </Typography>
 
           <div className={classes.buttonGroup}>
-            <Button href="/builder" className={classes.primaryButton}>
+            <Button href="/login" className={classes.primaryButton} onClick={handleGetStartedClick}
+                        disableElevation>
               Create Resume Now →
             </Button>
-            <Button className={classes.secondaryButton}>View Templates</Button>
+            <Button href = "/templates"className={classes.secondaryButton}>View Templates</Button>
+            
           </div>
 
           <div className={classes.checklist}>

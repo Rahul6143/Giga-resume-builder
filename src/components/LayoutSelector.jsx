@@ -23,9 +23,7 @@ const layouts = [
 
 const useStyles = makeStyles({
   dialogContent: {
-    maxWidth: "960px !important",
-    maxHeight: "90vh !important",
-    overflowY: "auto !important",
+    // overflowY: "auto !important",
     padding: "24px !important",
   },
   dialogTitle: {
@@ -39,7 +37,7 @@ const useStyles = makeStyles({
     marginBottom: "24px !important",
   },
   layoutGrid: {
-    display: "grid!important",
+    display: "grid !important",
     gap: "16px !important",
     gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr)) !important",
     marginBottom: "24px !important",
