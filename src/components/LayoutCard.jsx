@@ -7,13 +7,14 @@ const useStyles = makeStyles({
     position: "relative !important",
     borderRadius: "12px !important",
     overflow: "hidden !important",
-    backgroundColor: "#ffffff !important",
+    backgroundColor: "#ff000046 !important",
     border: "2px solid #d1d5db !important",
     transition: "all 0.3s !important",
+    boxShadow: "0 4px 12px #ff000046 !important",
     cursor: "pointer !important",
     "&:hover": {
       borderColor: "#2563eb !important",
-      boxShadow: "0 4px 12px rgba(0,0,0,0.08) !important",
+      boxShadow: "0 4px 12px #ff000098 !important",
     },
   },
   selected: {
@@ -21,6 +22,9 @@ const useStyles = makeStyles({
     boxShadow: "0 0 12px rgba(37,99,235,0.6) !important",
   },
   layoutContainer: {
+    marginTop: "8px !important",
+    borderRadius: "12px !important",
+    backgroundColor: "#ffffff8f !important",
     position: "relative !important",
     paddingTop: "75% !important", // 4:3 aspect ratio
   },
@@ -60,7 +64,8 @@ const useStyles = makeStyles({
     textAlign: "center !important",
   },
   titleText: {
-    fontWeight: '500 !important',
+    fontSize: "16px !important",
+    fontWeight: '600 !important',
     color: "#111827 !important",
   },
   // Layout types
@@ -70,6 +75,9 @@ const useStyles = makeStyles({
     alignItems: "center !important",
     height: "100% !important",
     "& $layoutBlock": {
+      border: "2px solid rgba(0, 0, 0, 1) !important",
+      backgroundColor: "rgba(251, 255, 191, 1) !important",
+      borderRadius: "8px !important",
       width: "75% !important",
       height: "100% !important",
     },
@@ -79,10 +87,16 @@ const useStyles = makeStyles({
     gap: "12px !important",
     height: "100% !important",
     "& $layoutBlock:first-child": {
+      borderRadius: "8px !important",
+      border: "2px solid rgba(0, 0, 0, 1) !important",
+      backgroundColor: "rgba(251, 255, 191, 1) !important",
       width: "40% !important",
       height: "100% !important",
     },
     "& $layoutBlock:last-child": {
+      borderRadius: "8px !important",
+      border: "2px solid rgba(0, 0, 0, 1) !important",
+      backgroundColor: "rgba(251, 255, 191, 1) !important",
       flex: '1 !important',
       height: "100% !important",
     },
@@ -93,6 +107,9 @@ const useStyles = makeStyles({
     gap: "12px !important",
     height: "100% !important",
     "& $layoutBlock": {
+      borderRadius: "8px !important",
+      border: "2px solid rgba(0, 0, 0, 1) !important",
+      backgroundColor: "rgba(251, 255, 191, 1) !important",
       height: "80px !important",
     },
   },
@@ -101,6 +118,9 @@ const useStyles = makeStyles({
     gap: "12px !important",
     height: "100% !important",
     "& $layoutBlock": {
+      borderRadius: "8px !important",
+      border: "2px solid rgba(0, 0, 0, 1) !important",
+      backgroundColor: "rgba(251, 255, 191, 1) !important",
       flex: '1 !important',
       height: "100% !important",
     },
@@ -111,6 +131,9 @@ const useStyles = makeStyles({
     gap: "12px !important",
     height: "100% !important",
     "& $layoutBlock:first-child": {
+      borderRadius: "8px !important",
+      border: "2px solid rgba(0, 0, 0, 1) !important",
+      backgroundColor: "rgba(251, 255, 191, 1) !important",
       width: "100% !important",
       height: "40px !important",
     },
@@ -120,6 +143,9 @@ const useStyles = makeStyles({
       flex: '1 !important',
     },
     "& $row $layoutBlock": {
+      borderRadius: "8px !important",
+      border: "2px solid rgba(0, 0, 0, 1) !important",
+      backgroundColor: "rgba(251, 255, 191, 1) !important",
       flex: '1 !important',
       height: "100% !important",
     },
@@ -129,6 +155,9 @@ const useStyles = makeStyles({
     gap: "8px !important",
     height: "100% !important",
     "& $layoutBlock": {
+      borderRadius: "8px !important",
+      border: "2px solid rgba(0, 0, 0, 1) !important",
+      backgroundColor: "rgba(251, 255, 191, 1) !important",
       flex: '1 !important',
       height: "100% !important",
     },

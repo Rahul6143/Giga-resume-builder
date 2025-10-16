@@ -116,6 +116,7 @@ const useStyles = makeStyles({
     maxWidth: "480px !important",
   },
   templatesGrid: {
+    justifyContent: "center !important",
     marginTop: "32px !important",
   },
   noTemplatesText: {
@@ -130,7 +131,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const TemplateGallery = () => {
+const TemplateGallery = () => {
   const classes = useStyles();
   const [activeCategory, setActiveCategory] = useState("All");
   const [layoutDialogOpen, setLayoutDialogOpen] = useState(false);
@@ -168,10 +169,10 @@ export const TemplateGallery = () => {
       variant="contained"
       style={{
         marginTop: "24px",
-        background: "linear-gradient(135deg, #2563eb, #7c3aed)",
+        background: "#9a69f0ff",
         color: "#ffffff",
         padding: "12px 24px",
-        fontWeight: 600,
+        fontWeight: '600',
       }}
       onClick={() => setLayoutDialogOpen(true)}
     >
@@ -218,3 +219,5 @@ export const TemplateGallery = () => {
     </Box>
   );
 };
+
+export default TemplateGallery;

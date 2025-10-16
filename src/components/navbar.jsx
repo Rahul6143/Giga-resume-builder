@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   },
   toolbar: {
     display: "flex !important",
-    justifyContent: "space-between !important",
+    justifyContent: "space-around !important",
     alignItems: "center !important",
     maxWidth: "1200px !important",
     margin: "0 auto",
@@ -30,7 +30,6 @@ const useStyles = makeStyles({
   logoText: {
     fontSize: "1.4rem !important",
     fontWeight: "700!important",
-    paddingLeft: "32px !important",
     background: "linear-gradient(90deg, #2563EB, #7C3AED) !important",
     WebkitBackgroundClip: "text!important",
     WebkitTextFillColor: "transparent !important",
@@ -93,11 +92,7 @@ const Navbar = () => {
   };
 
   const handleGetStartedClick = () => {
-    // Smooth scroll to TemplateGallery section
-    const gallerySection = document.getElementById("template-gallery");
-    if (gallerySection) {
-      gallerySection.scrollIntoView({ behavior: "smooth" });
-    }
+    navigate("/templates");
   };
 
   return (
