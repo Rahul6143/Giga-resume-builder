@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
     margin: "0 auto",
     padding: "5rem 1rem",
     display: "grid",
-    gridTemplateColumns: "1.75fr 1fr",
+    gridTemplateColumns: "1.2fr 1fr",
     gap: "3rem",
     alignItems: "center",
     "@media (max-width: 1024px)": {
@@ -219,7 +219,7 @@ const HeroSection = () => {
         <div className={classes.right}>
           <div className={classes.blurBg} />
           <img
-            src="https://via.placeholder.com/600x400"
+            src="image.png"
             alt="Resume builder preview"
             className={classes.image}
           />

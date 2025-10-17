@@ -18,30 +18,32 @@ import CTASection from "./components/ctasection";
 import Login from "./components/login";
 import TemplateGallery from "./components/templateGallery";
 
-
-// =========================
-// Home Page
-// =========================
 const HomePage = () => (
   <>
     <HeroSection />
-    <ExclusiveFeatures />
-    <KeyHighlights />
-    <WhoIsItFor />
-    <ReviewsSection />
+    <div id="features">
+      <ExclusiveFeatures />
+      <KeyHighlights />
+      <WhoIsItFor />
+    </div>
+    <div id="reviews">
+      <ReviewsSection />
+    </div>
     <ComparisonSection />
-    <AboutUsSection />
-    <FAQSection />
+    <div id="faqs">
+      <FAQSection />
+    </div>
+    <div id="aboutus">
+      <AboutUsSection />
+    </div>
+    
     <CTASection />
   </>
 );
 
-// =========================
-// Layout Wrapper (controls Navbar visibility)
-// =========================
 const Layout = ({ children }) => {
   const location = useLocation();
-  const hideNavbar = location.pathname === "/login"; // 👈 hide Navbar on /login
+  const hideNavbar = location.pathname === "/login";
 
   return (
     <>
@@ -51,9 +53,6 @@ const Layout = ({ children }) => {
   );
 };
 
-// =========================
-// Main App Component
-// =========================
 function App() {
   return (
     <Router>
@@ -62,7 +61,6 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/templates" element={<TemplateGallery />} />
-
         </Routes>
       </Layout>
     </Router>

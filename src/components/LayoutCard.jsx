@@ -23,6 +23,7 @@ const useStyles = makeStyles({
   },
   layoutContainer: {
     marginTop: "8px !important",
+    height: "20px !important",
     borderRadius: "12px !important",
     backgroundColor: "#ffffff8f !important",
     position: "relative !important",
@@ -59,7 +60,7 @@ const useStyles = makeStyles({
     animation: "$scaleIn 0.2s ease-out !important",
   },
   titleWrapper: {
-    padding: "16px !important",
+    // paddingBottom: "16px !important",
     borderTop: "1px solid rgba(209,213,219,0.5) !important",
     textAlign: "center !important",
   },
@@ -110,7 +111,7 @@ const useStyles = makeStyles({
       borderRadius: "8px !important",
       border: "2px solid rgba(0, 0, 0, 1) !important",
       backgroundColor: "rgba(251, 255, 191, 1) !important",
-      height: "80px !important",
+      // height: "80px !important",
     },
   },
   twoColumnLayout: {

@@ -33,7 +33,7 @@ const useStyles = makeStyles({
       left: '0 !important',
       width: "100% !important",
       height: "100% !important",
-      objectFit: "none !important",
+      // objectFit: "none !important",
       transition: "transform 0.5s !important",
     },
     "&:hover img": {

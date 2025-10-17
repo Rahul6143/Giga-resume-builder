@@ -76,7 +76,7 @@ const CTASection = () => {
           building your future.
         </Typography>
 
-        <Button href="/builder" className={classes.button}>
+        <Button href="/templates" className={classes.button}>
           Start Building Now →
         </Button>
       </Box>

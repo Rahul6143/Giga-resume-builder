@@ -45,6 +45,7 @@ const useStyles = makeStyles({
   },
   navItem: {
     color: "#374151 !important",
+    fontSize: "1rem !important",
     fontFamily: "'Roboto', sans-serif !important",
     fontWeight: "500!important",
     textDecoration: "none !important",
@@ -64,6 +65,7 @@ const useStyles = makeStyles({
   },
   loginBtn: {
     color: "#374151 !important",
+    fontSize: "1rem !important",
     fontWeight: "500!important",
     textTransform: "none!important",
     "&:hover": {
@@ -95,6 +97,13 @@ const Navbar = () => {
     navigate("/templates");
   };
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <AppBar className={classes.appBar} elevation={0}>
       <Toolbar className={classes.toolbar}>
@@ -104,40 +113,32 @@ const Navbar = () => {
 
         <ul className={classes.navLinks}>
           <li>
-            <a href="#features" className={classes.navItem}>
+            <Button className={classes.navItem} onClick={() => scrollToSection("features")}>
               Features
-            </a>
+            </Button>
           </li>
           <li>
-            <a href="#templates" className={classes.navItem}>
-              Templates
-            </a>
+            <Button className={classes.navItem} onClick={() => scrollToSection("reviews")}>
+              Reviews
+            </Button>
           </li>
           <li>
-            <a href="#pricing" className={classes.navItem}>
-              Pricing
-            </a>
+            <Button className={classes.navItem} onClick={() => scrollToSection("faqs")}>
+              FAQs
+            </Button>
           </li>
           <li>
-            <a href="#faq" className={classes.navItem}>
-              FAQ
-            </a>
+            <Button className={classes.navItem} onClick={() => scrollToSection("aboutus")}>
+              About Us
+            </Button>
           </li>
         </ul>
 
         <Box className={classes.rightButtons}>
-          <Button
-            className={classes.loginBtn}
-            onClick={handleLoginClick}
-            disableElevation
-          >
+          <Button className={classes.loginBtn} onClick={handleLoginClick} disableElevation>
             Login
           </Button>
-          <Button
-            className={classes.getStartedBtn}
-            onClick={handleGetStartedClick}
-            disableElevation
-          >
+          <Button className={classes.getStartedBtn} onClick={handleGetStartedClick} disableElevation>
             Get Started
           </Button>
         </Box>
