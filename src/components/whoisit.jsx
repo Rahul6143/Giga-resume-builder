@@ -86,7 +86,7 @@ const WhoIsItFor = () => {
         </Box>
 
         <Box className={classes.buttonWrapper}>
-          <Button href="/builder" className={classes.button} variant="contained">
+          <Button href="/login" className={classes.button} variant="contained">
             Build Your Resume For Free
           </Button>
         </Box>

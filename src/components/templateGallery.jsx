@@ -14,7 +14,7 @@ const templates = [
     category: "Modern",
     description:
       "Clean and contemporary design perfect for tech and creative roles",
-    image: "/logo192.png",
+    image: "/template1.jpg",
     isPopular: true,
   },
   {
@@ -23,7 +23,7 @@ const templates = [
     category: "Professional",
     description:
       "Traditional layout ideal for corporate and senior positions",
-    image: "/logo192.png",
+    image: "/template2.jpg",
     isPopular: true,
   },
   {
@@ -32,7 +32,7 @@ const templates = [
     category: "Creative",
     description:
       "Bold and unique template for designers and creatives",
-    image: "/logo192.png",
+    image: "/template3.jpg",
     isPopular: false,
   },
   {
@@ -41,7 +41,7 @@ const templates = [
     category: "Minimal",
     description:
       "Simple and elegant design that highlights your content",
-    image: "/logo192.png",
+    image: "/template4.jpg",
     isPopular: false,
   },
   {
@@ -50,7 +50,7 @@ const templates = [
     category: "Professional",
     description:
       "Sophisticated design for C-level and leadership roles",
-    image: "/logo192.png",
+    image: "/template5.jpg",
     isPopular: false,
   },
   {
@@ -59,7 +59,7 @@ const templates = [
     category: "Modern",
     description:
       "Developer-focused template with tech stack showcase",
-    image: "/logo192.png",
+    image: "/template6.jpg",
     isPopular: true,
   },
 ];
@@ -68,7 +68,6 @@ const categories = ["All", "Modern", "Professional", "Creative", "Minimal"];
 
 const useStyles = makeStyles({
   root: {
-    minHeight: "100vh !important",
     background: "linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%) !important",
   },
   heroSection: {
@@ -91,8 +90,8 @@ const useStyles = makeStyles({
   heroContent: {
     position: "relative !important",
     zIndex: '10 !important',
-    maxWidth: "768px !important",
-    margin: "0 auto !important",
+    // maxWidth: "768px !important",
+    // margin: "0 auto !important",
     display: "flex !important",
     flexDirection: "column !important",
     alignItems: "center !important",
@@ -113,11 +112,11 @@ const useStyles = makeStyles({
   heroSubtitle: {
     fontSize: "1.125rem !important",
     color: "rgba(255,255,255,0.9) !important",
-    maxWidth: "480px !important",
+    maxWidth: "760px !important",
   },
   templatesGrid: {
     justifyContent: "center !important",
-    marginTop: "32px !important",
+    // marginTop: "32px !important",
   },
   noTemplatesText: {
     textAlign: "center !important",
@@ -125,9 +124,17 @@ const useStyles = makeStyles({
     color: "#6b7280 !important",
     fontSize: "1.125rem !important",
   },
-  section: {
-    paddingTop: "48px !important",
-    paddingBottom: "48px !important",
+  section1: {
+    paddingTop: "20px !important",
+    // gap: "16px !important",
+    justifyItems: "space-around !important",
+    // paddingBottom: "48px !important",
+  },
+  section2: {
+    paddingTop: "20px !important",
+    gap: "16px !important",
+    justifyContent: "center !important",
+    // paddingBottom: "48px !important",
   },
 });
 
@@ -182,7 +189,7 @@ const TemplateGallery = () => {
       </Box>
 
       {/* Filter Section */}
-      <Container className={classes.section}>
+      <Container className={classes.section1}>
         <CategoryFilter
           categories={categories}
           activeCategory={activeCategory}
@@ -191,7 +198,7 @@ const TemplateGallery = () => {
       </Container>
 
       {/* Templates Grid */}
-      <Container className={classes.section}>
+      <Container className={classes.section2}>
         <Grid container spacing={4} className={classes.templatesGrid}>
           {filteredTemplates.map((template) => (
             <Grid item xs={12} sm={6} key={template.id}>

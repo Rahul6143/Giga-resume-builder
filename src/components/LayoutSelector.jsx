@@ -23,13 +23,16 @@ const layouts = [
 
 const useStyles = makeStyles({
   dialogContent: {
-    // overflowY: "auto !important",
     padding: "24px !important",
+    paddingTop: "0 !important",
+    paddingBottom: "0 !important",
+    maxHeight: "90vh", // Limit the height to 80% of the viewport height
+    overflowY: "auto", // Allow scrolling inside the dialog if content overflows
   },
   dialogTitle: {
     fontSize: "24px !important",
     fontWeight: '600 !important',
-    marginBottom: "8px !important",
+    paddingBottom: "8px !important",
   },
   dialogDescription: {
     fontSize: "16px !important",
@@ -39,12 +42,13 @@ const useStyles = makeStyles({
   layoutGrid: {
     display: "grid !important",
     gap: "16px !important",
-    gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr)) !important",
+    gridTemplateColumns: "repeat(3, 1fr) !important", // Fixed 3x3 grid layout
     marginBottom: "24px !important",
   },
   createButton: {
     background: "linear-gradient(135deg, #2563eb, #7c3aed) !important",
     color: "#ffffff !important",
+    marginBottom: "20px !important",
     "&:hover": {
       opacity: 0.9,
       background: "linear-gradient(135deg, #2563eb, #7c3aed)",
@@ -54,6 +58,7 @@ const useStyles = makeStyles({
   cancelButton: {
     borderColor: "#d1d5db !important", // gray-300
     color: "#111827 !important", // gray-900
+    marginBottom: "20px !important",
     "&:hover": {
       backgroundColor: "rgba(37,99,235,0.08)",
       borderColor: "#2563eb",
@@ -64,7 +69,7 @@ const useStyles = makeStyles({
 
 export const LayoutSelector = ({ open, onOpenChange, templateTitle }) => {
   const classes = useStyles();
-  const [selectedLayout, setSelectedLayout] = useState("sidebar"); // ✅ remove <LayoutType>
+  const [selectedLayout, setSelectedLayout] = useState("sidebar");
 
   const handleCreate = () => {
     const layoutName = layouts.find((l) => l.id === selectedLayout)?.title;
@@ -73,7 +78,7 @@ export const LayoutSelector = ({ open, onOpenChange, templateTitle }) => {
   };
 
   return (
-    <Dialog open={open} onClose={() => onOpenChange(false)} maxWidth="lg" fullWidth>
+    <Dialog open={open} onClose={() => onOpenChange(false)} maxWidth="sm" fullWidth>
       <DialogContent className={classes.dialogContent}>
         <DialogTitle className={classes.dialogTitle}>
           Choose Your Resume Template

@@ -5,7 +5,10 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   section: {
     textAlign: "center",
-    padding: "40px 16px",
+    paddingLeft: "16px",
+    paddingRight: "16px",
+    paddingBottom: "40px !important",
+    paddingTop: '65px !important',
   },
   container: {
     // maxWidth: '1248px',

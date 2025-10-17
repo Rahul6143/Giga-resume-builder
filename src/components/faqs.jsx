@@ -5,7 +5,10 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles(() => ({
   section: {
-    padding: "40px 16px !important",
+    paddingLeft: "16px",
+    paddingRight: "16px",
+    paddingBottom: "40px !important",
+    paddingTop: '65px !important',
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
