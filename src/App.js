@@ -16,7 +16,8 @@ import AboutUsSection from "./components/aboutus";
 import FAQSection from "./components/faqs";
 import CTASection from "./components/ctasection";
 import Login from "./components/login";
-import TemplateGallery from "./components/templateGallery";
+import TemplateGallery from "./components/Templategallery";
+import ScrollToTop from "./components/scrollReset";
 
 const HomePage = () => (
   <>
@@ -56,6 +57,7 @@ const Layout = ({ children }) => {
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
