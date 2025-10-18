@@ -1,4 +1,3 @@
-// src/components/LayoutSelector.jsx
 import React, { useState } from "react";
 import {
   Dialog,
