@@ -16,7 +16,7 @@ import AboutUsSection from "./components/aboutus";
 import FAQSection from "./components/faqs";
 import CTASection from "./components/ctasection";
 import Login from "./components/login";
-import TemplateGallery from "./components/Templategallery";
+import TemplateGallery from "./components/templateGallery";
 import ScrollToTop from "./components/scrollReset";
 
 const HomePage = () => (
