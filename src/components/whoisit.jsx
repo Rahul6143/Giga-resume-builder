@@ -101,7 +101,7 @@ import React from "react";
 import { makeStyles } from "@mui/styles";
 import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, TrendingUp, Sparkles } from "lucide-react";
-import { Box, Typography, Button, Grid, Paper } from "@mui/material";
+import { Box, Typography, Grid, Paper } from "@mui/material";
 
 const useStyles = makeStyles(() => ({
   root: {
